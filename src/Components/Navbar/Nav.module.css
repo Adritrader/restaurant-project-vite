@@ -24,9 +24,9 @@
 
 .nav_wrapper .logo span {
 
-    font-size: 25px;
+    font-size: 40px;
     font-weight: 700;
-    color: #241158;
+    color: #fff;
 
 }
 
@@ -43,14 +43,20 @@
     display: flex;
     gap: 18px;
     align-items: center;
+    color: #fff;
 
 }
 
 .nav_wrapper ul li a {
 
-    color: #1e1e1e;
+    color: #fff;
     font-weight: 500;
     font-family: 'poppins';
 
+}
+
+.nav_wrapper .menu-icon {
+
+    stroke: #fff;
 }
 

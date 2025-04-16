@@ -1,0 +1,60 @@
+.header_wrapper {
+
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+
+.swiper {
+
+    height: 100vh !important;
+    width: 100% !important;
+
+}
+
+.HeaderSlide {
+
+    height: 100% !important;
+    width: 100% !important;
+    background-image: url(./../../assets/images/home-hotel1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+}
+
+.slide2 {
+
+    background-image: url(./../../assets/images/home-hotel2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+}
+
+.slide3 {
+
+    background-image: url(./../../assets/images/home-hotel3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+
+
+}
+
+.HeaderSlide .content {
+
+
+    height: 100vh !important;
+    position: absolute;
+    bottom: 20%;
+    left: 40px;
+
+
+}

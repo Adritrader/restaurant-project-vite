@@ -22,14 +22,16 @@ button {
     font-size: 15px;
     font-weight: 500;
     transition: 2s;
-    z-index: 100;
     cursor: pointer;
+    color: #fff;
 
 }
 
 button:hover {
 
     border-color: black;
+    background-color: #fff;
+    color: black;
 
 }
 

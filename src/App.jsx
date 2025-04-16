@@ -6,10 +6,12 @@ function App() {
   
 
   return (
+    <>
     
-
     <Nav />
+    <Header />
 
+    </>
     
   )
 }
