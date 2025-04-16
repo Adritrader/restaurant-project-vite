@@ -55,8 +55,39 @@
 
 }
 
-.nav_wrapper .menu-icon {
+.nav_wrapper a .menu_icon {
 
-    stroke: #fff;
+    color: #fff !important;
+    border: 2px solid white;
+    height: 45px;
+    
+    width: 42px;
+    margin-left: 20px;
+    cursor: pointer;
+    
+
 }
+
+.nav_wrapper .menu_icon {
+
+    margin-top: 8px;
+    
+
+}
+
+.nav_wrapper a .menu_icon:hover {
+
+    color: black !important;
+    border: 2px solid black;
+    height: 45px;
+    
+    width: 45px;
+    margin-left: 20px;
+    background-color: #fff;
+    transition: 2s;
+    
+
+}
+
+
 

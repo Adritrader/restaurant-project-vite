@@ -13,7 +13,7 @@ function Nav() {
     <div className={navCSS.nav_wrapper}>
         <div className={navCSS.logo}>
         
-        <a href="#"><span><SiAltiumdesigner className='our-logo'/>PURE LOUNGE HOTEL</span></a>
+          <a href="#"><span><SiAltiumdesigner className='our-logo'/>PURE LOUNGE HOTEL</span></a>
         </div>
 
         <ul>
@@ -31,7 +31,7 @@ function Nav() {
             
         </div>
 
-        <FiMenu className='menu-icon' />
+        <a href="#"><FiMenu className={navCSS.menu_icon}/></a>
 
 
     </div>
