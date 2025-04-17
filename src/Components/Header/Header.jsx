@@ -1,7 +1,7 @@
-// Header.js
 import React from 'react';
-import headerCSS from './../Header/Header.module.css';
+import headerCSS from './Header.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import BookingForm from '../BookingForm/BookingForm';
 import 'swiper/css';
 import { Autoplay, Parallax } from 'swiper/modules';
 import slide1 from './../../assets/images/home-hotel1.png';
@@ -21,6 +21,9 @@ function Header() {
         speed={1500}
         modules={[Autoplay, Parallax]}
       >
+        <div className={headerCSS.bookingFormContainer}>
+          <BookingForm />
+        </div>
         {/* Slide 1 */}
         <SwiperSlide>
           <div

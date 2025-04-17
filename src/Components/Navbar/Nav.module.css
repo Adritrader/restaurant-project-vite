@@ -51,16 +51,17 @@
   
   /* HAMBURGER */
   .menu_icon {
-    display: none; /* Oculto por defecto */
+    display: none;
     background-color: white;
+    height: 40px;
     border: none;
     cursor: pointer;
-    z-index: 102;
+    z-index: 1000;
   }
   
   /* MENU OVERLAY */
   .menu_overlay {
-    display: none; /* Oculto por defecto */
+    display: none;
   }
   
   /* Ocultar elementos al abrir el menú */
@@ -82,7 +83,6 @@
       display: block;
       stroke: white;
     }
-a
   
     .menu_overlay {
       display: flex;
@@ -94,7 +94,7 @@ a
       height: 100vh;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(5px);
-      z-index: 101;
+      z-index: 999;
       transform: translateY(-100%);
       transition: transform 0.3s ease-in-out;
       overflow-y: auto;
@@ -155,5 +155,3 @@ a
       font-size: 18px;
     }
   }
-  
-  

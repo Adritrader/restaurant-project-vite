@@ -1,0 +1,16 @@
+.homeContainer {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.bookingSection {
+  position: relative;
+  z-index: 2;
+  margin-top: -100px;
+}
+
+@media (max-width: 768px) {
+  .bookingSection {
+    margin-top: -50px;
+  }
+}

@@ -1,14 +1,11 @@
-import Header from "../Components/Header/Header";
-import Nav from "../Components/Navbar/Nav";
+import styles from "./Home.module.css";
 
 function Home() {
-    return (
-      <div>
-        
-        
-      </div>
-    );
-  }
-  
-  export default Home;
-  
+  return (
+    <div className={styles.homeContainer}>
+      {/* More sections will be added here */}
+    </div>
+  );
+}
+
+export default Home;

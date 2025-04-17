@@ -3,22 +3,33 @@
     min-height: 100vh;
     width: 100%;
     position: relative;
-  }
-  
-  .swiper {
+}
+
+.bookingFormContainer {
+   position: absolute;
+   bottom: 50px;
+   right: 50px;
+   z-index: 10;
+   width: 400px;
+   background: rgba(255, 255, 255, 0.9);
+   border-radius: 10px;
+}
+
+.swiper {
     height: 100vh !important;
     width: 100% !important;
-  }
-  
-  .HeaderSlide {
+}
+
+.HeaderSlide {
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
-  }
-  
-  .HeaderSlide::after {
+    object-fit: cover;
+}
+
+.HeaderSlide::after {
     content: "";
     position: absolute;
     height: 100%;
@@ -26,9 +37,9 @@
     top: 0;
     left: 0;
     background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  }
-  
-  .HeaderSlide .content {
+}
+
+.HeaderSlide .content {
     position: absolute;
     bottom: 20%;
     left: 50px;
@@ -38,22 +49,37 @@
     padding: 25px;
     backdrop-filter: blur(5px);
     z-index: 2;
-  }
-  
-  .HeaderSlide .content small {
+}
+
+.HeaderSlide .content small {
     color: white;
     font-size: 16px;
-  }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
     .HeaderSlide .content {
-      bottom: 10%;
-      left: 20px;
-      font-size: 16px;
-      padding: 15px;
+        bottom: 10%;
+        left: 20px;
+        font-size: 16px;
+        padding: 15px;
     }
 
-    
+    .bookingFormContainer {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 500px;
+        padding: 0 20px;
+        z-index: 20;
+    }
+}
 
-  }
+@media screen and (max-width: 480px) {
+    .HeaderSlide .content {
+        padding: 10px;
+        left: 10px;
+    }
+}
