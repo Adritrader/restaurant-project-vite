@@ -1,41 +1,69 @@
-import React from 'react'
-import navCSS from './../Navbar/Nav.module.css'
-import { FaBook } from "react-icons/fa";
-import { FiMenu } from "react-icons/fi";
+// Nav.js
+import React, { useState } from 'react';
+import navCSS from './../Navbar/Nav.module.css';
+import { FiMenu, FiX } from "react-icons/fi";
 import { SiAltiumdesigner } from "react-icons/si";
 
-
-
-
 function Nav() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Función para alternar el estado del menú
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
-
     <div className={navCSS.nav_wrapper}>
-        <div className={navCSS.logo}>
-        
-          <a href="#"><span><SiAltiumdesigner className='our-logo'/>PURE LOUNGE HOTEL</span></a>
-        </div>
+      {/* Logo principal (siempre visible en pantallas grandes) */}
+      <div className={navCSS.logo}>
+        <a href="#">
+          <span>
+            <SiAltiumdesigner className={navCSS.logoIcon} />
+            PURE LOUNGE HOTEL
+          </span>
+        </a>
+      </div>
 
+      {/* Navbar estático para pantallas grandes */}
+      <ul className={navCSS.desktop_menu}>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Categorías</a></li>
+        <li><a href="#">Habitaciones</a></li>
+        <li><a href="#">Testimonios</a></li>
+        <li><a href="#">Blogs</a></li>
+      </ul>
+
+      {/* Botón hamburguesa (visible solo en pantallas pequeñas) */}
+      <button
+        className={`${navCSS.menu_icon} ${isMenuOpen ? navCSS.hideDesktopElements : ''}`}
+        onClick={toggleMenu}
+        aria-label="Abrir menú"
+      >
+        <FiMenu size={24} color="black" />
+      </button>
+
+      {/* Menú responsive */}
+      <div className={`${navCSS.menu_overlay} ${isMenuOpen ? navCSS.active : ''}`}>
+        <div className={navCSS.menu_header}>
+          <span className={navCSS.mobileLogo}>
+            <SiAltiumdesigner className={navCSS.logoIcon} />
+            PURE LOUNGE HOTEL
+          </span>
+          <button onClick={toggleMenu} className={navCSS.close_btn} aria-label="Cerrar menú">
+            <FiX size={24} color="black" />
+          </button>
+        </div>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#">Categorias</a></li>
-            <li><a href="#">Habitaciones</a></li>
-            <li><a href="#">Testimonios</a></li>
-            <li><a href="#">Blogs</a></li>
+          <li><a href="#" onClick={closeMenu}>Inicio</a></li>
+          <li><a href="#" onClick={closeMenu}>Sobre Nosotros</a></li>
+          <li><a href="#" onClick={closeMenu}>Categorías</a></li>
+          <li><a href="#" onClick={closeMenu}>Habitaciones</a></li>
+          <li><a href="#" onClick={closeMenu}>Testimonios</a></li>
+          <li><a href="#" onClick={closeMenu}>Blogs</a></li>
         </ul>
-
-        <div className={navCSS.nav_btns}>
-
-            <button className={navCSS.btn}>Reserva <FaBook className='book-icon' /></button>
-            
-        </div>
-
-        <a href="#"><FiMenu className={navCSS.menu_icon}/></a>
-
-
+      </div>
     </div>
-  )
+  );
 }
 
 export default Nav;

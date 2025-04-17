@@ -1,93 +1,162 @@
+/* Estilo general del Navbar */
 .nav_wrapper {
-
     height: 80px;
     width: 100%;
     display: flex;
-    position: fixed;
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
     padding: 0 15%;
+    position: fixed;
     top: 0;
     z-index: 99;
-    
-
-}
-
-.nav_wrapper .logo a {
-
+  }
+  
+  .logo a {
     font-size: 25px;
     font-weight: 700;
     color: #fff;
-
-}
-
-.nav_wrapper .logo span {
-
-    font-size: 40px;
-    font-weight: 700;
-    color: #fff;
-
-}
-
-
-.nav_wrapper ul li {
-
-    display: inline-block;
-    margin: 0 15px;
-
-}
-
-.Nav_btns {
-
+    text-decoration: none;
+  }
+  
+  .logo span {
     display: flex;
-    gap: 18px;
     align-items: center;
-    color: #fff;
-
-}
-
-.nav_wrapper ul li a {
-
+    gap: 10px;
+  }
+  
+  .logoIcon {
+    font-size: 40px;
+    color: #fff; /* Color predeterminado del ícono (blanco) */
+    transition: color 0.3s ease; /* Transición suave */
+  }
+  
+  /* NAVBAR ESTÁTICO PARA PANTALLAS GRANDES */
+  .desktop_menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .desktop_menu li {
+    margin: 0 15px;
+  }
+  
+  .desktop_menu li a {
     color: #fff;
     font-weight: 500;
-    font-family: 'poppins';
-
-}
-
-.nav_wrapper a .menu_icon {
-
-    color: #fff !important;
-    border: 2px solid white;
-    height: 45px;
-    
-    width: 42px;
-    margin-left: 20px;
+    text-decoration: none;
+  }
+  
+  /* HAMBURGER */
+  .menu_icon {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
     cursor: pointer;
+    z-index: 102;
+  }
+  
+  /* MENU OVERLAY */
+  .menu_overlay {
+    display: none; /* Oculto por defecto */
+  }
+  
+  /* Ocultar elementos al abrir el menú */
+  .hideDesktopElements {
+    display: none !important;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1200px) {
+    /* Ocultar el navbar estático en pantallas pequeñas */
+    .desktop_menu {
+      display: none;
+    }
+
+
+    .logoIcon {
+        font-size: 40px;
+        stroke: black;
+      }
+
     
+  
+    /* Mostrar el ícono del menú */
+    .menu_icon {
+      display: block;
+      stroke: white;
+    }
 
-}
-
-.nav_wrapper .menu_icon {
-
-    margin-top: 8px;
     
+  
+    /* Mostrar el menú desplegable */
+    .menu_overlay {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      z-index: 101;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .menu_overlay.active {
+      transform: translateY(0);
+    }
 
-}
-
-.nav_wrapper a .menu_icon:hover {
-
-    color: black !important;
-    border: 2px solid black;
-    height: 45px;
-    
-    width: 45px;
-    margin-left: 20px;
-    background-color: #fff;
-    transition: 2s;
-    
-
-}
-
-
-
+    .menu_overlay.active .logoIcon {
+        color: #000; /* Ícono negro cuando el menú está abierto */
+      }
+  
+    .menu_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 15%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  
+    .mobileLogo {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: black;
+    }
+  
+    .close_btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .menu_overlay ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .menu_overlay ul li {
+      padding: 20px 15%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  
+    .menu_overlay ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
