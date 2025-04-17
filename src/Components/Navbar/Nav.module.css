@@ -52,7 +52,7 @@
   /* HAMBURGER */
   .menu_icon {
     display: none; /* Oculto por defecto */
-    background: none;
+    background-color: white;
     border: none;
     cursor: pointer;
     z-index: 102;
@@ -68,30 +68,22 @@
     display: none !important;
   }
   
-  /* Responsive Design */
   @media screen and (max-width: 1200px) {
-    /* Ocultar el navbar estático en pantallas pequeñas */
     .desktop_menu {
       display: none;
     }
-
-
-    .logoIcon {
-        font-size: 40px;
-        stroke: black;
-      }
-
-    
   
-    /* Mostrar el ícono del menú */
+    .logoIcon {
+      font-size: 40px;
+      stroke: black;
+    }
+  
     .menu_icon {
       display: block;
       stroke: white;
     }
-
-    
+a
   
-    /* Mostrar el menú desplegable */
     .menu_overlay {
       display: flex;
       flex-direction: column;
@@ -105,21 +97,22 @@
       z-index: 101;
       transform: translateY(-100%);
       transition: transform 0.3s ease-in-out;
+      overflow-y: auto;
     }
   
     .menu_overlay.active {
       transform: translateY(0);
     }
-
+  
     .menu_overlay.active .logoIcon {
-        color: #000; /* Ícono negro cuando el menú está abierto */
-      }
+      color: #000;
+    }
   
     .menu_header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 25px 15%;
+      padding: 20px 15%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
   
@@ -142,15 +135,17 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
   
     .menu_overlay ul li {
-      padding: 20px 15%;
+      padding: 18px 15%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  
+    .menu_overlay ul li:first-child {
+      border-top: none;
     }
   
     .menu_overlay ul li a {
@@ -160,3 +155,5 @@
       font-size: 18px;
     }
   }
+  
+  

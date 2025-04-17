@@ -1,8 +1,11 @@
-// Nav.js
 import React, { useState } from 'react';
 import navCSS from './../Navbar/Nav.module.css';
 import { FiMenu, FiX } from "react-icons/fi";
 import { SiAltiumdesigner } from "react-icons/si";
+import { Link } from 'react-router-dom';
+
+<Link to="/">Inicio</Link>
+
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,12 +28,11 @@ function Nav() {
 
       {/* Navbar estático para pantallas grandes */}
       <ul className={navCSS.desktop_menu}>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Sobre Nosotros</a></li>
-        <li><a href="#">Categorías</a></li>
-        <li><a href="#">Habitaciones</a></li>
-        <li><a href="#">Testimonios</a></li>
-        <li><a href="#">Blogs</a></li>
+        <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
+        <li><Link to="/categorias">Categorías</Link></li>
+        <li><Link to="/habitaciones">Habitaciones</Link></li>
+        <li><Link to="/restaurante">Restaurante</Link></li>
+        <li><Link to="/testimonios">Testiomonios</Link></li>
       </ul>
 
       {/* Botón hamburguesa (visible solo en pantallas pequeñas) */}
