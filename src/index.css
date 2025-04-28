@@ -35,3 +35,23 @@ button:hover {
 
 }
 
+.section {
+
+    padding: 90px 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.section__Title {
+    
+    font-size: 30px;
+
+}
+
+.section__Title span {
+
+    color: aqua;
+
+}
+
