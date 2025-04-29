@@ -1,0 +1,54 @@
+.Service_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .Service_cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  .Service_card {
+    padding: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Service_card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .Service_card p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 1024px) {
+    .Service_cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .Service_cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  

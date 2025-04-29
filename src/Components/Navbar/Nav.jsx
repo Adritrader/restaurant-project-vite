@@ -3,20 +3,20 @@ import navCSS from './../Navbar/Nav.module.css';
 import { FiMenu, FiX } from "react-icons/fi";
 import { SiAltiumdesigner } from "react-icons/si";
 import { Link } from 'react-router-dom';
-
-<Link to="/">Inicio</Link>
-
+import Modal from '../Modal/Modal';
+import BookingForm from '../BookingForm/BookingForm';
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
-  // Función para alternar el estado del menú
+  // Function to toggle the menu state
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div className={navCSS.nav_wrapper}>
-      {/* Logo principal (siempre visible en pantallas grandes) */}
+      {/* Main logo (always visible on large screens) */}
       <div className={navCSS.logo}>
         <a href="#">
           <span>
@@ -26,7 +26,7 @@ function Nav() {
         </a>
       </div>
 
-      {/* Navbar estático para pantallas grandes */}
+      {/* Static navbar for large screens */}
       <ul className={navCSS.desktop_menu}>
         <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
         <li><Link to="/categorias">Categorías</Link></li>
@@ -35,23 +35,33 @@ function Nav() {
         <li><Link to="/testimonios">Testiomonios</Link></li>
       </ul>
 
-      {/* Botón hamburguesa (visible solo en pantallas pequeñas) */}
+      {/* Hamburger button (visible only on small screens) */}
+      <div className={navCSS.rightControls}>
       <button
-        className={`${navCSS.menu_icon} ${isMenuOpen ? navCSS.hideDesktopElements : ''}`}
-        onClick={toggleMenu}
-        aria-label="Abrir menú"
-      >
-        <FiMenu size={24} color="black" />
-      </button>
+  className={`${navCSS.menu_icon} ${isMenuOpen ? navCSS.hide : ''}`}
+  onClick={toggleMenu}
+  aria-label="Open menu"
+>
+  <FiMenu size={24} color="black" />
+</button>
 
-      {/* Menú responsive */}
+  <button
+    className={navCSS.bookingButton}
+    onClick={() => setIsBookingModalOpen(true)}
+  >
+    Reservar
+  </button>
+</div>
+
+
+      {/* Responsive menu */}
       <div className={`${navCSS.menu_overlay} ${isMenuOpen ? navCSS.active : ''}`}>
         <div className={navCSS.menu_header}>
           <span className={navCSS.mobileLogo}>
             <SiAltiumdesigner className={navCSS.logoIcon} />
             PURE LOUNGE HOTEL
           </span>
-          <button onClick={toggleMenu} className={navCSS.close_btn} aria-label="Cerrar menú">
+          <button onClick={toggleMenu} className={navCSS.close_btn} aria-label="Close menu">
             <FiX size={24} color="black" />
           </button>
         </div>
@@ -64,6 +74,10 @@ function Nav() {
           <li><a href="#" onClick={closeMenu}>Blogs</a></li>
         </ul>
       </div>
+
+      <Modal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)}>
+        <BookingForm />
+      </Modal>
     </div>
   );
 }

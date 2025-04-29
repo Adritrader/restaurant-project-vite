@@ -4,6 +4,7 @@ import Nav from './Components/Navbar/Nav'
 import Header from './Components/Header/Header'
 import Home from './pages/Home';
 import About from './Components/About/About';
+import Services from './Components/Services/Services';
 import Rooms from './pages/Rooms';
 import Testimonials from './pages/Testimonials';
 import Restaurant from './pages/Restaurant';
@@ -19,6 +20,7 @@ function App() {
       <Nav />
       {isHome && <Header />}
       <About />
+      <Services />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre-nosotros" element={<About />} />

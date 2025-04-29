@@ -1,157 +1,192 @@
 /* Estilo general del Navbar */
 .nav_wrapper {
-    height: 80px;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 0 15%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+/* Logo */
+.logo a {
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoIcon {
+  font-size: 40px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Menú escritorio */
+.desktop_menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop_menu li {
+  margin: 0 15px;
+}
+
+.desktop_menu li a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Contenedor de botón y hamburguesa */
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburguesa: oculta en desktop */
+.menu_icon {
+  display: none;
+  background-color: white;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Botón "Reservar": OCULTO por defecto */
+.bookingButton {
+  display: none;
+  padding: 8px 16px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bookingButton:hover {
+  background-color: #333;
+}
+
+/* Overlay del menú móvil */
+.menu_overlay {
+  display: none;
+}
+
+/* Utilidad para esconder elementos */
+.hideDesktopElements {
+  display: none !important;
+}
+
+/* --- MEDIA QUERIES (responsive) --- */
+@media screen and (max-width: 1024px) {
+  .desktop_menu {
+    display: none;
+  }
+
+  .logoIcon {
+    font-size: 40px;
+    stroke: black;
+  }
+
+  .menu_icon {
+    display: block;
+    stroke: white;
+  }
+
+  .bookingButton {
+    display: block;
+  }
+
+  .menu_overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+  }
+
+  .menu_overlay.active {
+    transform: translateY(0);
+  }
+
+  .menu_overlay.active .logoIcon {
+    color: #000;
+  }
+
+  .menu_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
-    padding: 0 15%;
-    position: fixed;
-    top: 0;
-    z-index: 99;
+    padding: 20px 15%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
-  .logo a {
-    font-size: 25px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .logo span {
+
+  .mobileLogo {
+    font-size: 20px;
+    font-weight: bold;
     display: flex;
     align-items: center;
     gap: 10px;
+    color: black;
   }
-  
-  .logoIcon {
-    font-size: 40px;
-    color: #fff; /* Color predeterminado del ícono (blanco) */
-    transition: color 0.3s ease; /* Transición suave */
-  }
-  
-  /* NAVBAR ESTÁTICO PARA PANTALLAS GRANDES */
-  .desktop_menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .desktop_menu li {
-    margin: 0 15px;
-  }
-  
-  .desktop_menu li a {
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  
-  /* HAMBURGER */
-  .menu_icon {
-    display: none;
-    background-color: white;
-    height: 40px;
+
+  .close_btn {
+    background: none;
     border: none;
     cursor: pointer;
-    z-index: 1000;
   }
-  
-  /* MENU OVERLAY */
-  .menu_overlay {
-    display: none;
+
+  .menu_overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
   }
-  
-  /* Ocultar elementos al abrir el menú */
-  .hideDesktopElements {
-    display: none !important;
+
+  .menu_overlay ul li {
+    padding: 18px 15%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
-  @media screen and (max-width: 1200px) {
-    .desktop_menu {
-      display: none;
-    }
-  
-    .logoIcon {
-      font-size: 40px;
-      stroke: black;
-    }
-  
-    .menu_icon {
-      display: block;
-      stroke: white;
-    }
-  
-    .menu_overlay {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(5px);
-      z-index: 999;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease-in-out;
-      overflow-y: auto;
-    }
-  
-    .menu_overlay.active {
-      transform: translateY(0);
-    }
-  
-    .menu_overlay.active .logoIcon {
-      color: #000;
-    }
-  
-    .menu_header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 15%;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-  
-    .mobileLogo {
-      font-size: 20px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: black;
-    }
-  
-    .close_btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  
-    .menu_overlay ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .menu_overlay ul li {
-      padding: 18px 15%;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-  
-    .menu_overlay ul li:first-child {
-      border-top: none;
-    }
-  
-    .menu_overlay ul li a {
-      text-decoration: none;
-      color: black;
-      font-weight: 500;
-      font-size: 18px;
-    }
+
+  .menu_overlay ul li:first-child {
+    border-top: none;
   }
+
+  .menu_overlay ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
+/* Oculta elementos al activarse el menú */
+.hide {
+  display: none !important;
+}
