@@ -18,6 +18,7 @@ function App() {
     <>
       <Nav />
       {isHome && <Header />}
+      <About />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre-nosotros" element={<About />} />
