@@ -127,10 +127,9 @@
   }
   
   .swiper-slide img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: auto; /* Change width to auto for better scaling */
+    max-height: 300px; /* Set a maximum height for images */
+    object-fit: cover; /* Maintain aspect ratio */
   }
   
   /* Espaciado entre imágenes del modal */
@@ -153,4 +152,3 @@
   .closeModal:hover {
     background-color: #f0f0f0;
   }
-  

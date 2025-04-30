@@ -62,6 +62,13 @@ button:hover {
     font-weight: 600;
     color: black;
     
-
 }
 
+
+@media (max-width: 768px) {
+    .section__Title {
+      margin: 0 !important;
+      font-size: 32px; /* opcional: más pequeño en móviles */
+      text-align: center; /* opcional: centrarlo */
+    }
+  }
