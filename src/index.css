@@ -45,13 +45,7 @@ button:hover {
 .section__Title {
     
     font-size: 42px;
-    margin-left: 50px;
-
-}
-
-.section__Title p {
     
-    margin-left: 50px;
 
 }
 
@@ -66,9 +60,7 @@ button:hover {
     font-size: 25px;
     font-weight: 600;
     color: black;
-    margin-left: 50px;
     margin-top: 20px;
-
 
 }
 

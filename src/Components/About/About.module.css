@@ -8,6 +8,13 @@
     padding: 40px 30px;
 }
 
+.about_cards small, h2 , p{
+    
+    margin-left: 50px;
+
+}
+
+
 .about_img {
     flex: 1;
     max-width: 55%;
@@ -38,15 +45,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 50px;
+    padding: 40px;
     
 }
 
 .Cards p {
-    background: white;
+    background: rgb(255, 255, 255);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    padding: 20px;
+    padding: 15px;
     font-size: 28px;
     text-align: center;
     font-weight: 600;
