@@ -12,6 +12,11 @@
   z-index: 99;
 }
 
+/* Navbar styles when scrolled */
+.scrolled {
+  background-color: black; /* Change to desired color */
+}
+
 /* Logo */
 .logo a {
   font-size: 25px;
@@ -62,6 +67,7 @@
   display: none;
   background-color: white;
   height: 40px;
+  width: 100px;
   border: none;
   cursor: pointer;
   z-index: 1000;
@@ -70,12 +76,14 @@
 /* Botón "Reservar": OCULTO por defecto */
 .bookingButton {
   display: none;
-  padding: 8px 16px;
+  height: 40px;
+  width: 100px;
+  margin-left: 30px;
+  padding: 6px 12px; /* Reduced padding for mobile */
   background-color: white;
   color: black;
   border: none;
-  border-radius: 6px;
-  font-size: 14px;
+  font-size: 12px; /* Reduced font size for mobile */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -103,6 +111,13 @@
   .logoIcon {
     font-size: 40px;
     stroke: black;
+  }
+
+  .logo a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
   }
 
   .menu_icon {
@@ -147,7 +162,7 @@
   }
 
   .mobileLogo {
-    font-size: 20px;
+    font-size: 16px; /* Reduced size for mobile */
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -182,7 +197,7 @@
     text-decoration: none;
     color: black;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px; /* Reduced size for mobile */
   }
 }
 

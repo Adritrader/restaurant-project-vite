@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import navCSS from './../Navbar/Nav.module.css';
 import { FiMenu, FiX } from "react-icons/fi";
 import { SiAltiumdesigner } from "react-icons/si";
@@ -9,13 +9,23 @@ import BookingForm from '../BookingForm/BookingForm';
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); // Adjust threshold as needed
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Function to toggle the menu state
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className={navCSS.nav_wrapper}>
+    <div className={`${navCSS.nav_wrapper} ${isScrolled ? navCSS.scrolled : ''}`}>
       {/* Main logo (always visible on large screens) */}
       <div className={navCSS.logo}>
         <a href="#">
@@ -38,6 +48,12 @@ function Nav() {
       {/* Hamburger button (visible only on small screens) */}
       <div className={navCSS.rightControls}>
       <button
+    className={navCSS.bookingButton}
+    onClick={() => setIsBookingModalOpen(true)}
+  >
+    Reservar
+  </button>
+      <button
   className={`${navCSS.menu_icon} ${isMenuOpen ? navCSS.hide : ''}`}
   onClick={toggleMenu}
   aria-label="Open menu"
@@ -45,12 +61,7 @@ function Nav() {
   <FiMenu size={24} color="black" />
 </button>
 
-  <button
-    className={navCSS.bookingButton}
-    onClick={() => setIsBookingModalOpen(true)}
-  >
-    Reservar
-  </button>
+  
 </div>
 
 
