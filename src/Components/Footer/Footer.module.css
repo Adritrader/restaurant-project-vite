@@ -1,0 +1,141 @@
+/* footer.module.css */
+
+.footerSection {
+  background-color: #000; /* Negro puro */
+  color: #fff;
+  padding: 4rem 2rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 0 !important;
+  min-height: 150px; /* Para que no colapse verticalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section .footerSection {
+  margin-bottom: 0 !important;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerLogo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #bfa742; /* Dorado */
+}
+
+.footerLogo p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd; /* Blanco suave */
+}
+
+.footerLinks h3,
+.footerContact h3,
+.footerSocial h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #bfa742; /* Dorado */
+}
+
+.footerLinks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 0.5rem;
+}
+
+.footerLinks a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: #bfa742; /* Dorado */
+}
+
+.footerContact p {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #ddd;
+}
+
+.footerContact svg {
+  margin-right: 0.5rem;
+  fill: #bfa742;
+}
+
+.footerSocial .socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footerSocial a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.footerSocial a:hover {
+  color: #bfa742;
+}
+
+/* Zona del copyright, sin colapsar */
+.footerBottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  padding: 1rem 2rem;
+  color: #bfa742;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  white-space: nowrap; /* Evita salto de línea */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footerBottom p {
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: 0;
+  }
+
+  .footerContact p {
+    justify-content: center;
+  }
+
+  .footerSocial .socialIcons {
+    justify-content: center;
+  }
+
+  .section .footerSection {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .footerBottom {
+    white-space: normal; /* Permite que el texto se rompa */
+    padding: 1rem;
+  }
+}
