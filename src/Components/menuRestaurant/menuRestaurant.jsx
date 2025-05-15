@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import menuCSS from './MenuRestaurant.module.css';
+import menuCSS from './menuRestaurant.module.css';
 
 import { GiWheat, GiPeanut, GiMilkCarton, GiShrimp, GiChickenOven } from 'react-icons/gi';
 import { MdEgg, MdNoFood } from 'react-icons/md';
