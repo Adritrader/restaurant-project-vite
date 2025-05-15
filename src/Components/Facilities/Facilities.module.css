@@ -5,6 +5,7 @@
     padding: 40px 20px;
     text-align: center;
     width: 100%;
+    /* Ensure it behaves like testimonials */
   }
   
   .swiper {
@@ -16,6 +17,7 @@
   .slide {
     display: flex;
     justify-content: center;
+    width: 100%; /* Ensures each slide takes full width */
   }
   
   .imageWrapper {
@@ -24,7 +26,7 @@
     height: 600px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    
   }
   
   .image {
@@ -41,7 +43,7 @@
   .overlay {
     position: absolute;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    
     color: white;
     width: 100%;
     padding: 20px;
@@ -64,3 +66,25 @@
         margin: 0px;
     }
   }
+
+  @media (max-width: 600px) {
+  .testimonialCard {
+    width: 100%; /* Full width on mobile */
+  }
+  .Facilities_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 30px !important;
+    /* Ensure it behaves like testimonials */
+  }
+
+  :root {
+
+    --swiper-navigation-size: 30px !important;
+
+  }
+
+}

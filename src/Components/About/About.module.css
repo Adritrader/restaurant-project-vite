@@ -8,11 +8,7 @@
     padding: 40px 30px;
 }
 
-.about_cards small, h2 , p{
-    
-    margin-left: 50px;
 
-}
 
 
 .about_img {
@@ -89,4 +85,36 @@
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
+
+    .about_cards p {
+    margin-left: 0;
 }
+}
+
+@media screen and (max-width: 768px) {
+ 
+
+    .about_cards p {
+    margin-left: 0;
+}
+
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+ 
+
+    .about_cards p {
+    margin-left: 0;
+}
+
+
+
+
+}
+
+
+
