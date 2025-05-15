@@ -1,7 +1,7 @@
 // App.jsx
 import { useLocation } from 'react-router-dom';
 import Nav from './Components/Navbar/Nav'
-import Footer from './Components/Footer/footer';
+import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header'
 import About from './Components/About/About';
 import Services from './Components/Services/Services';
