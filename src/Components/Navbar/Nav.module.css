@@ -201,6 +201,37 @@
   }
 }
 
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+  .nav_wrapper {
+    padding: 0 5%; /* Reducimos el padding lateral */
+  }
+
+  .logo a {
+    font-size: 14px;
+  }
+
+  .menu_icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bookingButton {
+    width: auto;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .rightControls {
+    gap: 8px;
+  }
+
+  .menu_overlay ul li {
+    padding: 14px 10%;
+  }
+}
+
+
 /* Oculta elementos al activarse el menú */
 .hide {
   display: none !important;
