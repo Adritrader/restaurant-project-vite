@@ -1,97 +1,231 @@
-.menu_container {
-  padding: 70px 0;
-  background: #fff8f0;
-  color: #333;
-  display: block !important;
+/* MenuRestaurant.module.css */
+
+.menuSection {
+  background-color: #ffffff; /* fondo negro muy oscuro */
+  color: #d4af37; /* color dorado */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  flex-direction: column;
+  
 }
 
-.category_title {
-  font-size: 1.8rem;
-  color: #c87b33;
-  margin-bottom: 25px;
-  text-transform: capitalize;
-  border-bottom: 2px solid #c87b33;
-  display: inline-block;
-}
-
-.dishes_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.dish_card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgb(200 123 51 / 0.2);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.dish_card:hover {
-  box-shadow: 0 20px 40px rgb(200 123 51 / 0.35);
-  transform: translateY(-10px);
-}
-
-.dish_image_wrapper {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-}
-
-.dish_image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: scale 0.3s ease;
-}
-
-.dish_card:hover .dish_image {
-  scale: 1.05;
-}
-
-.dish_info {
-  padding: 20px 15px;
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
   text-align: center;
+  
 }
 
-.dish_name {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
-  color: #c87b33;
+.menuSection button {
+
+  width: 50px !important;
+
+}
+
+.categorySection {
+  margin-top: 3rem;
+}
+
+.categoryTitle {
+  font-size: 2rem;
+  border-bottom: 2px solid #d4af37;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.menuContainer.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(280px,1fr));
+  gap: 1.5rem;
+  margin: 40px;
+}
+
+.menuContainer.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dishCard {
+  background-color: #fafaf8; /* card negro oscuro */
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 8px #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.dishCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px #d4af37ff;
+}
+
+.dishImage {
+  width: 100%;
+  height: 160px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.dishName {
   font-weight: 700;
+  margin: 0.5rem 0 0.3rem;
+  color: #000000;
 }
 
-.dish_desc {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 12px;
+.dishDesc {
+  font-size: 0.9rem;
+  color: #000000;
+  flex-grow: 1;
+  margin-bottom: 0.5rem;
 }
 
-.dish_price {
+.dishPrice {
   font-weight: 700;
-  font-size: 1.1rem;
-  color: #c87b33;
+  color: #000000;
+  margin-top: 0.3rem;
+}
+
+.allergens {
+  margin-top: 0.7rem;
+  color: #000000;
+  font-size: 1.3rem;
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-start;
+}
+
+.listLine {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #d4af37aa;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #000000;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.listLine span {
+  flex-shrink: 0;
+}
+
+.allergensList {
+  margin-left: auto;
+  display: flex;
+  gap: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.allergenIcon,
+.allergenIconList {
+  color: #000000;
+  filter: drop-shadow(0 0 1px #d4af37cc);
+}
+
+/* Botones para cambiar vista */
+.viewToggle {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.toggleBtn {
+  background: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  padding: 0.3rem 0.8rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.toggleBtn:hover,
+.toggleBtn.active {
+  background-color: #d4af37;
+  color: #121212;
 }
 
 /* Responsive */
-
-@media (max-width: 768px) {
-  .dishes_grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+@media (max-width: 600px) {
+  .dishDesc {
+    font-size: 0.85rem;
   }
+  .dishPrice {
+    font-size: 0.9rem;
+  }
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .listLine {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  @media (max-width: 768px) {
+  .menuContainer.grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .menuContainer.grid {
+      grid-template-columns: 1fr;
+    }
+  
+
+  .dishCard {
+    padding: 0.8rem;
+  }
+
+  .dishImage {
+    height: 140px;
+  }
+
+  .listLine {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .allergensList {
+    margin-left: 0;
+    margin-top: 0.4rem;
+    justify-content: flex-start;
+  }
+  .toggleBtn {
+  background: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  padding: 0.15rem 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
 }
 
-@media (max-width: 480px) {
-  .dishes_grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .menuSection button {
+
+    width: 50px !important;
+
   }
 
-  .dish_image_wrapper {
-    height: 150px;
-  }
+  .viewToggle {
+  text-align: center;
+  margin-bottom: 0px !important;
+  
+}
+
+}
+}
 }

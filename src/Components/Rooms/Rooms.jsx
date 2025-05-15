@@ -27,7 +27,7 @@ function Rooms() {
     '/src/assets/images/suite-junior1.jpg',
     '/src/assets/images/suite-junior2.jpg',
     '/src/assets/images/home-hotel1.jpg',
-    '/src/assets/images/home-hotel2.jpg',
+    '/src/assets/images/home-hotel2.png',
     '/src/assets/images/home-hotel3.jpg'
   ];
 
